@@ -1,0 +1,530 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My First API",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "127.0.0.1:8000/"
+        },
+        {
+            "url": "127.0.0.1:8000/"
+        },
+        {
+            "url": "127.0.0.1:8000/"
+        }
+    ],
+    "paths": {
+        "/api/candidater": {
+            "post": {
+                "tags": [
+                    "Candidature"
+                ],
+                "summary": "Ajouter un candidature",
+                "description": "Ajoute un nouveau candidature avec les détails fournis",
+                "operationId": "postuler",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nomformation": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Candidature créé avec succès"
+                    },
+                    "404": {
+                        "description": "formation non trouve"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/candidatures/{id}/accepter": {
+            "post": {
+                "tags": [
+                    "Candidature"
+                ],
+                "summary": "Ajouter un candidature",
+                "description": "vous avez accepter la candidature avec succe ",
+                "operationId": "accepterCandidatur",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "status": {
+                                        "type": "enum"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Candidature acceptée avec succès"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/candidatures/{id}/refuser": {
+            "post": {
+                "tags": [
+                    "Candidature"
+                ],
+                "summary": "refuser un candidature",
+                "description": "vous avez refuser la candidature avec succe ",
+                "operationId": "refuserCandidature",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "status": {
+                                        "type": "enum"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Candidature refuser avec succès"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/candidatures": {
+            "get": {
+                "tags": [
+                    "Candidature"
+                ],
+                "summary": "Tout les  candidature",
+                "description": "la liste de tout les candidature ",
+                "operationId": "candidatures",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "candidature": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "affichage Candidature avec succès"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/candidatures/acceptees": {
+            "get": {
+                "tags": [
+                    "Candidature"
+                ],
+                "summary": "Tout les  candidature accepter",
+                "description": "la liste de tout les candidature  accepter",
+                "operationId": "candidaturesAcceptees",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "candidature": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Candidature accepter avec succès"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/candidatures/refusees": {
+            "get": {
+                "tags": [
+                    "Candidature"
+                ],
+                "summary": "Tout les  candidature refuser",
+                "description": "la liste de tout les candidature  refuser",
+                "operationId": "candidaturesRefusees",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "candidature": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Candidature refuser avec succès"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/ajouter_formation": {
+            "post": {
+                "tags": [
+                    "Formation"
+                ],
+                "summary": "Ajouter un formation",
+                "description": "Ajoute un nouveau formation avec les détails fournis",
+                "operationId": "AjouterFormation",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nomformation": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Formation créé avec succès"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/formation/{id}": {
+            "post": {
+                "tags": [
+                    "Formation"
+                ],
+                "summary": "Supprimer un formation",
+                "description": "Supprime un formation en fonction de l'ID fourni",
+                "operationId": "destroy",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "formation supprimé avec succès"
+                    },
+                    "401": {
+                        "description": "Non autorisé"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/modifier/{id}": {
+            "post": {
+                "tags": [
+                    "Formation"
+                ],
+                "summary": "Modifier un formation",
+                "description": "Modifier un formation en fonction de l'ID fourni",
+                "operationId": "update",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "formation Modifieravec succès"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/ajouter-role": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Ajouter un role",
+                "description": "Ajoute un nouveau role avec les détails fournis",
+                "operationId": "ajouterRole",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nomRole": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ajout role  avec succès"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/ajoutercandidat": {
+            "post": {
+                "tags": [
+                    "Utilisateurs"
+                ],
+                "summary": "Inscrire un candidat ",
+                "description": "Inscription d'un candidat  avec les détails fournis",
+                "operationId": "inscrirCandidat",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "adresse": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Candidat inscrit avec succès"
+                    }
+                }
+            }
+        },
+        "/api/ajouter-utilisateur-admin": {
+            "post": {
+                "tags": [
+                    "Utilisateurs"
+                ],
+                "summary": "Inscrire un admin",
+                "description": "Inscription d'un admin  avec les détails fournis",
+                "operationId": "ajouterUtilisateurAdmin",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nom": {
+                                        "type": "string"
+                                    },
+                                    "prenom": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Admin inscrit avec succès"
+                    }
+                }
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Utilisateurs"
+                ],
+                "summary": "Connecter un utilisateur",
+                "description": "Connexion d'un utilisteurs  avec les détails fournis",
+                "operationId": "login",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Utilisateur connecté avec succès"
+                    },
+                    "401": {
+                        "description": "Informations invalid"
+                    }
+                }
+            }
+        },
+        "/api/deconnecter": {
+            "post": {
+                "tags": [
+                    "Utilisateurs"
+                ],
+                "summary": "Deconnecter un utilisateur",
+                "description": "Deconnexion d'un utilisteurs  et invalidation de son token jwt",
+                "operationId": "logout",
+                "responses": {
+                    "200": {
+                        "description": "Utilisateur deconnecté  avec succès"
+                    },
+                    "401": {
+                        "description": "Aucun utilisateur connecté"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Candidature",
+            "description": "Endpoints pour la gerer les candidature."
+        },
+        {
+            "name": "Formation",
+            "description": "Endpoints pour la gerer les formations."
+        },
+        {
+            "name": "Candidature",
+            "description": "Endpoints pour la gerer les candidature."
+        }
+    ]
+}
