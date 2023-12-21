@@ -57,7 +57,7 @@ class LoginAdminTest extends TestCase
      */
     public function testConnexionReussie()
     {
-        // Création d'un utilisateur
+     
         $user = User::create([
             'nom' => 'sara',
             'prenom' => 'utshiwa',

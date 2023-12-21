@@ -23,13 +23,13 @@ class InscriptionAdminTest extends TestCase
             'nom' => 'rokhayaa',
             'prenom' => 'touree',
             'email' => 'rokhaya9@gmail.com',
-            'password' => '123456789', // Assurez-vous que le mot de passe est une chaîne
+            'password' => '123456789', 
             'role_id' => 1,
             'adresse' => 'dakar',
         ]);
     
         $response->assertStatus(201)
-                 ->assertJson(['message' => 'Admin ajouté avec succès']); // Message corrigé
+                 ->assertJson(['message' => 'Admin ajouté avec succès admin']); 
     }
     
 }
