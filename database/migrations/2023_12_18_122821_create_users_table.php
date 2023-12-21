@@ -20,9 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('adresse');
-            
-           
-                 
+      
             $table->string('niveau_etude')->nullable();
             $table->string('date_naissance')->nullable();
             $table->foreignIdFor(Role::class)->constrained()->onDelete('cascade');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Formation;
+use App\Models\User;
 use Illuminate\Http\Request;
 use OpenApi\Annotations as OA;
 
@@ -170,5 +171,19 @@ class FormationController extends Controller
         ]);
 
         return response(['message' => 'Formation mise à jour avec succès', 'formation' => $formation], 200);
+    }
+
+    public function ListeFormationTeste()
+    {
+        $formation = Formation::all();
+
+        return response(['formation' => $formation], 200);
+    }
+
+    public function ListeUser()
+    {
+        $user = User::all();
+
+        return response(['user' => $user], 200);
     }
 }

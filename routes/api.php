@@ -30,11 +30,15 @@ Route::middleware('auth:api')->group(function () {
     Route::post('ajouter_formation',[FormationController::class,'AjouterFormation']);
     Route::post('/candidatures/{id}/accepter', [CandidatureController::class, 'accepterCandidature']);
     Route::post('/candidatures/{id}/refuser', [CandidatureController::class, 'refuserCandidature']);
-    Route::get('/candidatures', [CandidatureController::class, 'toutesLesCandidatures']);
-    Route::get('/candidatures/acceptees', [CandidatureController::class, 'candidaturesAcceptees']);
-    Route::get('/candidatures/refusees', [CandidatureController::class, 'candidaturesRefusees']);
+  
+   
+  
 });
-
+Route::get('/candidatures/refusees', [CandidatureController::class, 'candidaturesRefusees']);
+Route::get('/candidatures/acceptees', [CandidatureController::class, 'candidaturesAcceptees']);
+Route::get('liste_user',[FormationController::class,'ListeUser']);
+Route::get('/candidatures', [CandidatureController::class, 'toutesLesCandidatures']);
+Route::get('listeFormation',[FormationController::class,'ListeFormationTeste']);
 Route::post('login', [UserController::class, 'login']);
 Route::post('/ajoutercandidat', [UserController::class, 'inscrirCandidat']);
 Route::post('/ajouter-role', [UserController::class, 'ajouterRole']);
